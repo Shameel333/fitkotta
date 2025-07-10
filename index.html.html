@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>fun</title>
+</head>
+
+<body>
+
+    <div class="nav">
+        <div class="menu-btn" onclick="toggle()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <div class="menu" id="menu">
+            <div class="links">
+                <a href="#" class="menu-link">Home</a>
+                <a href="#" class="menu-link">About</a>
+                <a href="#" class="menu-link">Projects</a>
+                <a href="#" class="menu-link">Contact</a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="hero">
+        <div class="frame">
+            <p id="herop"></p>
+            <img src="man1.png">
+            <a href="form.html"><button  class="hero-btn">PRESS ME</button></a>
+
+        </div>
+
+
+
+    </div>
+    <div class="second">
+
+
+    </div>
+ <div class="loader" id="loader">
+        <div class="l1"></div>
+        <div class="l2"></div>
+        <div class="l3"></div>
+        <div class="l4"></div>
+        <div class="l5"></div>
+        <div class="l6"></div>
+    </div>
+</body>
+</html>
+<style>
+    body {
+        background-color: #6f43fe;
+        background-attachment: scroll;
+        height: 100%;
+        min-height: 120vh;
+        width: 100vw;
+        margin: 0px;
+        font-family: ABCGravity, Arial, sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        cursor: url('file/cursor.png'), auto;
+
+    }
+
+    .nav {
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        gap: 1px;
+        backdrop-filter: blur(10px);
+        height: 100px;
+        width: 95%;
+        margin: 1% 2% 0% 2%;
+        border-radius: 10px;
+        background-color: #00000036;
+        z-index: 10;
+    }
+
+    .menu-btn {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        height: 30px;
+        margin: 10px;
+        width: 40px;
+        z-index: 11;
+        margin-left: 25px;
+        cursor: pointer;
+        /* cursor: url('file/cursor3.png'),auto; */
+
+    }
+
+    .bar {
+
+        border-radius: 5px;
+        background-color: rgb(255, 255, 255);
+        height: 30px;
+        width: 90%;
+
+    }
+
+    .menu {
+        position: absolute;
+        left: -100vw;
+        top: 0px;
+        height: 190vh;
+        min-width: 320px;
+        max-width: 400px;
+        z-index: 10;
+        backdrop-filter: blur(10px);
+        background-color: rgba(255, 255, 255, 0.041);
+        transition: .4s ease-in-out;
+
+    }
+
+    .menu.active {
+        left: -10px;
+        top: -5%;
+
+    }
+
+    .links {
+        margin-top: 100px;
+        display: flex;
+        flex-direction: column;
+        padding: 15px;
+        gap: 10px;
+    }
+
+    .menu-link {
+        /* box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.5),
+            -2px -2px 2px rgba(255, 255, 255, 0.2); */
+        border-radius: 10px;
+        height: 35px;
+        padding: 5px;
+        text-align: center;
+        color: aliceblue;
+        text-decoration: none;
+        font-weight: 300;
+        font-size: 20px;
+        margin: 5px;
+        transition: .1s ease-in-out;
+        font-weight: 900;
+        font-size: 50px;
+        ;
+
+    }
+
+    .menu-link:hover {
+        transform: translateX(3px) translateY(-3px);
+        filter: drop-shadow(2px 2px 1px #000);
+
+    }
+
+    .hero {
+        width: 90vw;
+        height: 60vh;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: end;
+    }
+
+    .frame {
+        background-color: transparent;
+        border-radius: 20px;
+        padding: 0px 20px 0px 20px;
+        margin-top: 10vh;
+        display: flex;
+
+    }
+
+    .frame img {
+        width: 200px;
+        height: auto;
+        position: absolute;
+        right: 5%;
+        top: 25%;
+
+    }
+
+    .frame p {
+        color: white;
+        animation: spawn 3s steps(26) forwards;
+        font-weight: 900;
+        font-size: 20px;
+        padding-right: 2px;
+        position: absolute;
+        left: 5%;
+        top: 20%;
+    }
+
+    .hero-btn {
+        position: absolute;
+        top: 43%;
+        left: 12%;
+        background-color: white;
+        padding: 10px 20px 10px 20px;
+        border-radius: 10px;
+        border: 1px solid transparent;
+        font-weight: 900;
+        font-size: 16px;
+        cursor: pointer;
+        box-shadow: inset -2px -2px 1px black,
+            3px 3px 1px black;
+    }
+
+    .hero-btn:active {
+        box-shadow: inset 2px 2px 1px black,
+            3px 3px 1px black;
+    }
+
+
+    .second {
+
+
+        min-height: 100vh;
+        background-color: antiquewhite;
+
+    }
+
+    /* 
+    @keyframes blink {
+        0%{
+            border-right: 0px;
+        }
+
+        50% {
+            border-right: 5px;
+        }
+        100%{
+            border-right: 0px;
+        }
+ } */
+          .loader {
+        position: fixed;
+        left: 40%;
+        top: 40%;
+        border: 1px solid rgba(0, 0, 0, 0.11);
+        display: none;
+        flex-direction: row;
+        margin-left: 2px;
+        justify-content: center;
+        align-items: center;
+        transition: 1s ease all;
+        padding: 10px;
+        border-radius: 10px;
+        backdrop-filter: blur(5px);
+    }
+
+
+
+    .l1 {
+        background-color: black;
+        height: 15px;
+        width: 6px;
+        margin-left: 2px;
+        animation: color 1s ease .2s 1;
+    }
+
+    .l2 {
+        background-color: black;
+        height: 37px;
+        width: 15px;
+        margin-left: 2px;
+        animation: color 1s ease .4s 1;
+        border-radius: 4px;
+    }
+
+    .l3 {
+        background-color: black;
+        height: 10px;
+        width: 12px;
+        margin-left: 2px;
+        animation: color 1s ease .6s 1;
+    }
+
+    .l4 {
+        background-color: black;
+        height: 10px;
+        width: 12px;
+        margin-left: 0px;
+        animation: color 1s ease .8s 1;
+    }
+
+    .l5 {
+        background-color: black;
+        height: 37px;
+        width: 15px;
+        margin-left: 2px;
+        animation: color 1s ease 1s 1;
+        border-radius: 4px;
+    }
+
+    .l6 {
+        background-color: black;
+        height: 15px;
+        width: 6px;
+        margin-left: 2px;
+        animation: color 1s ease 1.2s 1;
+    }
+
+    @keyframes color {
+        0% {}
+
+        100% {
+            background-color: greenyellow;
+        }
+
+    }
+</style>
+<script>
+    function toggle() {
+        document.querySelector(".menu-btn").classList.toggle("active");
+        document.querySelector(".menu").classList.toggle("active");
+    }
+
+  
+  const text = "Hello, Welcome To Fitkotta!";
+  const speed = 100; // milliseconds per character
+  let i = 0;
+
+  function typeWriter() {
+    if (i < text.length) {
+      document.getElementById("herop").innerHTML += text.charAt(i);
+      i++;
+      setTimeout(typeWriter, speed);
+    }
+  }
+
+  window.onload = typeWriter;
+
+    //   function loaderon() {
+    //     const loader = document.getElementById("loader");
+    //     loader.style.display = "flex"; 
+    //     setTimeout(function () {
+    //     window.location.href = "form.html";
+    //     },1200);
+   // }
+</script>
